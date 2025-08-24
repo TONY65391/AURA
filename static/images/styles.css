@@ -78,7 +78,7 @@ header .sub-menu .menu{
     padding: 50px 20px;
     height: 100vh;
     background: url('/static/images/image-6.png') black;
-    background-position: 50% -300%;
+    background-position: 50% 0%;
     background-repeat: no-repeat;
     transform: translateX(100%);
 }
