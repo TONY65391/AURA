@@ -1,0 +1,268 @@
+*, html{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    scroll-behavior: smooth;
+    transition: 0.5s ease-in-out;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    width: min(100%, 1500px);
+    margin: auto;
+    overflow: hidden;
+}
+body.dim{animation: dim 1s ease forwards;}
+body.undim{animation: undim 1s ease-in-out forwards;}
+@keyframes dim{
+    to{filter: blur(20px) brightness(50%); pointer-events: none; }
+}
+@keyframes undim{
+    to{filter: blur(0px) brightness(100%); pointer-events: all; }
+}
+:root{
+    --orange: rgb(243, 105, 14);
+    --hover-orange: rgb(180, 79, 12);
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 70px;
+    svg{width: 40px; fill: var(--orange); filter: drop-shadow(1px 1px 1px black); rotate: -30deg;}
+}
+header *{z-index: 2;}
+header div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 1px 1px 1px black;
+}
+header div p{
+    font-size: 30px;
+    font-variant: small-caps;
+    font-style: italic;
+    color: white;
+    font-weight: 700;
+}
+header .links a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 10px;
+    font-weight: 700;
+}
+header .links a:hover,
+header .links a:first-child{
+    color: var(--orange);
+    padding-right: 0px;
+}
+header #plan a{
+    background: var(--orange);
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid var(--orange);
+}
+header #plan a:hover{
+    background: none;
+}
+header .sub-menu .menu{
+    display: block;
+    position: absolute;
+    top: 0%;
+    width: 80vw;
+    right: 0;
+    padding: 50px 20px;
+    height: 100vh;
+    background: url('/static/images/image-6.png') black;
+    background-position: 50% -300%;
+    background-repeat: no-repeat;
+    transform: translateX(100%);
+}
+header .sub-menu.open .menu{
+    animation: reset 1s ease forwards;
+}
+header .sub-menu.close .menu{
+    animation: closeNav 1s ease-in-out forwards;
+}
+@keyframes closeNav{
+    from{
+        transform: translateX(0%);
+    }
+    to{
+        transform: translateX(100%);
+    }
+}
+header .sub-menu .menu a:nth-child(2){
+    margin-top: 50px;
+}
+header .sub-menu .menu a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 10px 0;
+    text-transform: capitalize;
+    text-shadow: none;
+} 
+header .sub-menu .menu a:hover,
+header .sub-menu .menu a:nth-child(2){
+    border: 1px solid var(--orange);
+    color: var(--orange);
+    padding: 10px 30px;
+}
+header .sub-menu .menu p{
+    color: var(--orange);
+    font-size: 25px;
+}
+header .sub-menu .menu nav{
+    cursor: pointer;
+}
+header .sub-menu .menu nav:hover div{
+    background: var(--orange);
+}
+header .sub-menu .menu nav div{
+    height: 2px;
+    width: 25px;
+    margin: 5px;
+    background: white;
+}
+header .sub-menu .menu nav div:nth-child(1){
+    transform: translateY(4px) rotate(45deg);
+}
+header .sub-menu .menu nav div:nth-child(2){
+    transform: translateY(-3px) rotate(-45deg);
+}
+
+header .sub-menu .openBtn{
+    list-style: none;
+    cursor: pointer;
+    display: block;
+}
+header .sub-menu .openBtn div{
+    width: 20px;
+    height: 2px;
+    background: white;
+    margin: 5px;
+    display: block;
+}
+header .sub-menu .openBtn:hover div{
+    background: var(--orange);
+}
+
+/* ANIMATION */
+@keyframes reset{
+    to{
+        transform: translate(0) scale(1);
+        opacity: 1;
+        pointer-events: all;
+        /* filter: brightness(100%) blur(0); */
+    }
+}
+
+/* MAIN FIRST SECTION */
+main section.hero{
+    margin-top: -70px;
+    min-height: 80vh;
+    height: 100vh;
+    background: url("/static/images/home-hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: animate 10s infinite linear;
+    position: relative;
+}
+@keyframes animate{
+    0%{background-position: 100% 0%;}
+    50%{background-position: 0% 100%;}
+    100%{background-position: 100% 0%;}
+}
+main section.hero::after{
+    content: "";
+    width: 100%;
+    min-height: 80vh;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+main section.hero .content{
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    color: white;
+    transform: translateY(-50%);
+    width: min(80%, 500px);
+    text-shadow: 1px 1px 2px black;
+    line-height: 1.5;
+}
+main section.hero .content h3{
+    font-size: 16px;
+    padding: 5px 20px;
+    background: rgba(255, 253, 253, 0.3);
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 20px;
+    width: min(70%, 500px);
+    font-weight: 100;
+}
+main section.hero .content h1{
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 3em;
+}
+main section.hero .content .link{
+    margin-top: 20px;
+    display: flex;
+    flex: 1;
+    gap: 10px;
+}
+main section.hero .content .link a{
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: white;
+    width: fit-content;
+    border-radius: 10px;
+    text-shadow: none;
+    border: 2px solid var(--orange);
+    margin-top: 20px;
+}
+main section.hero .content .link a:first-child{
+    background: var(--orange);
+}
+main section.hero .content .link a:first-child:hover{
+    background: none;
+    color: white;
+}
+main section.hero .content .link a:last-child{
+    background: none;
+    text-shadow: 1px 1px 2px black;
+}
+main section.hero .content .link a:last-child:hover{
+    background: var(--orange);
+}
+
+@media screen and (max-width: 50em) {
+    header .links, header #plan{
+        display: none;
+    } 
+    main section.hero .content h1{
+        font-size: 35px;
+    }
+    main section.hero .content .link{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 50em) {
+    header .sub-menu{
+        display: none;
+    }  
+}
