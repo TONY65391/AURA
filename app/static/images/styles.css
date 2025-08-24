@@ -1,268 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 *, html{
-    box-sizing: border-box;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
     user-select: none;
-    scroll-behavior: smooth;
-    transition: 0.5s ease-in-out;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: 0.5s ease-out;
+    font-family: "Roboto Serif", serif;
 }
 body{
-    width: min(100%, 1500px);
-    margin: auto;
     overflow: hidden;
+    width: min();
 }
-body.dim{animation: dim 1s ease forwards;}
-body.undim{animation: undim 1s ease-in-out forwards;}
-@keyframes dim{
-    to{filter: blur(20px) brightness(50%); pointer-events: none; }
+
+body.light{
+    color: black;
 }
-@keyframes undim{
-    to{filter: blur(0px) brightness(100%); pointer-events: all; }
+body.dark{
+    color: white;
 }
-:root{
-    --orange: rgb(243, 105, 14);
-    --hover-orange: rgb(180, 79, 12);
-}
+
 header{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 70px;
-    svg{width: 40px; fill: var(--orange); filter: drop-shadow(1px 1px 1px black); rotate: -30deg;}
+    height: 80px;
+    color: white;
+    padding: 20px 0;
 }
-header *{z-index: 2;}
+header a{
+    margin: 0 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+}
 header div{
     display: flex;
     align-items: center;
-    gap: 10px;
-    text-shadow: 1px 1px 1px black;
+    gap: 20px;
+    svg{fill: orange; width: 50px; height: 40px;}
 }
-header div p{
-    font-size: 30px;
+header a:nth-child(1),
+header a:hover{
+    color: orange;
+}
+header div:last-child a{
+    color: white;
+    padding: 10px 20px;
+    background: orange;
+    border: 2px solid orange;
+    font-weight: 700;
+    border-radius: 20px;
+    text-transform: none;
     font-variant: small-caps;
-    font-style: italic;
-    color: white;
-    font-weight: 700;
+    transform: translate(0);
 }
-header .links a{
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 0 10px;
-    font-weight: 700;
-}
-header .links a:hover,
-header .links a:first-child{
-    color: var(--orange);
-    padding-right: 0px;
-}
-header #plan a{
-    background: var(--orange);
-    padding: 10px 20px;
-    border-radius: 5px;
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-    border: 2px solid var(--orange);
-}
-header #plan a:hover{
+header div:last-child a:hover{
     background: none;
+    color: orange;
 }
-header .sub-menu .menu{
-    display: block;
+header nav{
+    position: relative;
+}
+header nav .menu{
+    border: 2px solid red;
     position: absolute;
-    top: 0%;
-    width: 80vw;
+    top: 100%;
     right: 0;
-    padding: 50px 20px;
-    height: 100vh;
-    background: url('/static/images/image-6.png') black;
-    background-position: 50% 0%;
-    background-repeat: no-repeat;
-    transform: translateX(100%);
+    width: 100vw;
+    display: none;
 }
-header .sub-menu.open .menu{
-    animation: reset 1s ease forwards;
-}
-header .sub-menu.close .menu{
-    animation: closeNav 1s ease-in-out forwards;
-}
-@keyframes closeNav{
-    from{
-        transform: translateX(0%);
-    }
-    to{
-        transform: translateX(100%);
-    }
-}
-header .sub-menu .menu a:nth-child(2){
-    margin-top: 50px;
-}
-header .sub-menu .menu a{
+header nav .menu a{
     display: block;
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    border: 1px solid white;
-    border-radius: 10px;
     margin: 10px 0;
-    text-transform: capitalize;
-    text-shadow: none;
-} 
-header .sub-menu .menu a:hover,
-header .sub-menu .menu a:nth-child(2){
-    border: 1px solid var(--orange);
-    color: var(--orange);
-    padding: 10px 30px;
+    background: none;
+    border: none;
+    text-align: center;
 }
-header .sub-menu .menu p{
-    color: var(--orange);
-    font-size: 25px;
-}
-header .sub-menu .menu nav{
-    cursor: pointer;
-}
-header .sub-menu .menu nav:hover div{
-    background: var(--orange);
-}
-header .sub-menu .menu nav div{
-    height: 2px;
-    width: 25px;
-    margin: 5px;
-    background: white;
-}
-header .sub-menu .menu nav div:nth-child(1){
-    transform: translateY(4px) rotate(45deg);
-}
-header .sub-menu .menu nav div:nth-child(2){
-    transform: translateY(-3px) rotate(-45deg);
-}
-
-header .sub-menu .openBtn{
-    list-style: none;
-    cursor: pointer;
+header nav .openBtn{
     display: block;
+    cursor: pointer;
 }
-header .sub-menu .openBtn div{
+header nav .openBtn:hover div{
+    background: orange;
+}
+header nav .openBtn div{
+    background: white;
+    margin: 5px;
+    height: 2px;
     width: 20px;
-    height: 2px;
-    background: white;
-    margin: 5px;
     display: block;
-}
-header .sub-menu .openBtn:hover div{
-    background: var(--orange);
-}
-
-/* ANIMATION */
-@keyframes reset{
-    to{
-        transform: translate(0) scale(1);
-        opacity: 1;
-        pointer-events: all;
-        /* filter: brightness(100%) blur(0); */
-    }
 }
 
 /* MAIN FIRST SECTION */
-main section.hero{
-    margin-top: -70px;
+main section:first-child{
     min-height: 80vh;
     height: 100vh;
-    background: url("/static/images/home-hero.jpg");
-    background-repeat: no-repeat;
+    margin-top: -80px;
+    background-position: center;
     background-size: cover;
-    animation: animate 10s infinite linear;
-    position: relative;
+    background-position: 10% 60%;
+    background-repeat: no-repeat;
+    background-image: url('/static/images/pexels-daniel-kendy-takeda-bueno-2149635162-30715170.jpg');
 }
-@keyframes animate{
-    0%{background-position: 100% 0%;}
-    50%{background-position: 0% 100%;}
-    100%{background-position: 100% 0%;}
-}
-main section.hero::after{
-    content: "";
-    width: 100%;
-    min-height: 80vh;
+main section:first-child .container{
+    display: grid;
+    grid-template-columns: repeat(3, 100%);
+    align-items: center;
     height: 100vh;
-    background-color: rgba(0,0,0,0.3);
-    position: absolute;
-    top: 0;
-    left: 0;
 }
-main section.hero .content{
-    z-index: 1;
-    position: absolute;
-    top: 50%;
-    left: 5%;
+main section:first-child .container.to-second{
+    animation: second 1s ease forwards;
+}
+@keyframes second{
+    to{transform: translateX(-100%);}
+}
+main section:first-child .container.to-third{
+    animation: third 1s ease forwards;
+}
+@keyframes third{
+    to{transform: translateX(-200%);}
+}
+main section:first-child .content{
     color: white;
-    transform: translateY(-50%);
-    width: min(80%, 500px);
-    text-shadow: 1px 1px 2px black;
+    width: min(90%, 600px);
     line-height: 1.5;
+    padding-left: 8%;
 }
-main section.hero .content h3{
-    font-size: 16px;
-    padding: 5px 20px;
-    background: rgba(255, 253, 253, 0.3);
-    text-transform: uppercase;
-    text-align: center;
-    border-radius: 20px;
-    width: min(70%, 500px);
-    font-weight: 100;
-}
-main section.hero .content h1{
+main section:first-child .content h1{
+    color: white;
+    line-height: 1.2;
     font-weight: 500;
-    text-transform: capitalize;
-    font-size: 3em;
+    font-variant: small-caps;
 }
-main section.hero .content .link{
-    margin-top: 20px;
-    display: flex;
-    flex: 1;
-    gap: 10px;
+main section:first-child .content h1 span{color: orange; font-style: italic;}
+main section:first-child .content p{
+    margin: 20px 0;
 }
-main section.hero .content .link a{
-    display: block;
-    padding: 10px 20px;
+main section:first-child .content a{
+    color: white;
+    padding: 8px 40px;
+    background: orange;
+    border: 2px solid orange;
+    border-radius: 20px;
     text-decoration: none;
-    color: white;
     width: fit-content;
-    border-radius: 10px;
-    text-shadow: none;
-    border: 2px solid var(--orange);
+    display: block;
     margin-top: 20px;
+    font-variant: small-caps;
 }
-main section.hero .content .link a:first-child{
-    background: var(--orange);
-}
-main section.hero .content .link a:first-child:hover{
+main section:first-child .content a:hover{
     background: none;
-    color: white;
-}
-main section.hero .content .link a:last-child{
-    background: none;
-    text-shadow: 1px 1px 2px black;
-}
-main section.hero .content .link a:last-child:hover{
-    background: var(--orange);
+    color: orange;
 }
 
-@media screen and (max-width: 50em) {
-    header .links, header #plan{
+@media screen and (max-width: 40em) {
+    header .main-logs{
         display: none;
-    } 
-    main section.hero .content h1{
-        font-size: 35px;
-    }
-    main section.hero .content .link{
-        display: block;
-    }
-}
-
-@media screen and (min-width: 50em) {
-    header .sub-menu{
-        display: none;
-    }  
+    }    
+    h1{font-size: 25px;}
+    h2{font-size: 20px;}
+    p{font-size: 16px;}
 }
