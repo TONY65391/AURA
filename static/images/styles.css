@@ -9,9 +9,12 @@
 }
 body{
     overflow-x: hidden;
-    width: min();
+    width: min(100%, 1500px);
+    margin: auto;
 }
-
+:root{
+    --grey-color: rgb(4, 20, 20);
+}
 body.light{
     color: black;
 }
@@ -152,9 +155,9 @@ main section:first-child{
     margin-top: -80px;
     background-position: center;
     background-size: cover;
-    background-position: 10% 60%;
+    background-position: left;
     background-repeat: no-repeat;
-    background-image: url('/static/images/pexels-daniel-kendy-takeda-bueno-2149635162-30715170.jpg');
+    background-image: url('/static/images/pexels-daniel-reche-718241-1556688.jpg');
 }
 main section:first-child .container{
     display: grid;
@@ -178,17 +181,23 @@ main section:first-child .container.to-third{
 }
 main section:first-child .content{
     color: white;
-    width: min(90%, 600px);
+    width: min(80%, 750px);
     line-height: 1.5;
     padding-left: 8%;
+    /* border: 2px solid red; */
 }
 main section:first-child .content h1{
     color: white;
     line-height: 1.2;
     font-weight: 500;
     font-variant: small-caps;
+    font-size: 40px;
+    text-shadow: 1px 1px 2px black;
 }
-main section:first-child .content h1 span{color: orange; font-style: italic;}
+main section:first-child .content h1 span{
+    color: orange; 
+    font-style: italic;
+}
 main section:first-child .content p{
     margin: 20px 0;
 }
@@ -210,14 +219,200 @@ main section:first-child .content a:hover{
 }
 
 
+/* MAIN SECOND SECTION */
+main section:nth-child(2) .cards{
+    padding-top: 50px;
+    width: 85%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+main section:nth-child(2) .cards .card{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    background: var(--grey-color);
+}
+main section:nth-child(2) .cards .card:hover img{
+    scale: 1.1;
+}
+main section:nth-child(2) .cards .card a{
+    display: flex;
+    align-items: center;
+    gap: 0px;
+    padding: 8px 28px;
+    background: orange;
+    border: 2px solid orange;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    margin-top: 20px;
+    width: fit-content;
+}
+main section:nth-child(2) .cards .card a:hover,
+main section:nth-child(2) .cards .card a:hover svg{
+    background: none;
+    color: orange;
+    fill: orange;
+}
+main section:nth-child(2) .cards .card p{
+    font-size: 40px;
+}
+main section:nth-child(2) .cards .card p span{
+    font-size: 20px;
+    font-style: italic;
+}
+main section:nth-child(2) .cards .card h3{
+    font-size: 30px;
+    font-weight: 100;
+    margin: 10px 0;
+}
+main section:nth-child(2) .cards .card img{
+    width: 170px;
+    object-fit: cover;
+}
+main section:nth-child(2) .cards .card .img-cont{
+    border: 5px solid orange;
+    border-radius: 50%;
+    overflow: hidden;
+}
 
-@media screen and (max-width: 40em) {
+main section:nth-child(2) .menu{
+    padding-top: 100px;
+}
+main section:nth-child(2) .menu h3{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    font-style: italic;
+}
+main section:nth-child(2) .menu .filters{
+    width: fit-content;
+    margin: auto;
+    margin-top: 20px;
+}
+main section:nth-child(2) .menu .filters button{
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background: none;
+    cursor: pointer;
+}
+main section:nth-child(2) .menu .filters button:first-child,
+main section:nth-child(2) .menu .filters button:hover{
+    background: var(--grey-color);
+    color: white;
+}
+main section:nth-child(2) .menu a#view{
+    width: fit-content;
+    padding: 8px 28px;
+    background: orange;
+    border: 2px solid orange;
+    border-radius: 20px;
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin: 30px auto;
+}
+main section:nth-child(2) .menu a#view:hover{
+    background: none;
+    color: orange;
+}
+main section:nth-child(2) .menu .slides{
+    padding-top: 50px;
+    display: grid;
+    width: 85%;
+    margin: auto;
+    gap: 20px;
+
+    @media (width >= 30em){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (width >= 70em){
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+main section:nth-child(2) .menu .slides .slide{
+    background: var(--grey-color);
+    color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+main section:nth-child(2) .menu .slides .slide h4{
+    font-size: 25px;
+    font-weight: 500;
+    color: orange;
+}
+main section:nth-child(2) .menu .slides .slide .slide-text{
+    padding: 20px 30px;
+}
+main section:nth-child(2) .menu .slides .slide .slide-text p{
+    line-height: 1.5;
+    margin-top: 10px;
+}
+main section:nth-child(2) .menu .slides .slide .slide-text .price{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+main section:nth-child(2) .menu .slides .slide .slide-text  .price p{
+    margin-top: 0;
+}
+main section:nth-child(2) .menu .slides .slide .slide-text .price svg{
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    background: orange;
+    fill: white;
+    border-radius: 50%;
+}
+main section:nth-child(2) .menu .slides .slide .img-cont{
+    background: rgb(241, 236, 236);
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    border-bottom-left-radius: 40px;
+}
+main section:nth-child(2) .menu .slides .slide .img-cont img{
+    width: 40%;
+    object-fit: cover;
+    display: block;
+    margin: auto;
+}
+
+@media screen and (max-width: 50em) {
     header .main-logs, header .order{
         display: none;
     }    
+
+    /* SECOND SECTION */
+    main section:nth-child(2) .cards{
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
+    main section:nth-child(2) .cards .card h3{
+        font-size: 25px;
+    }
+    main section:nth-child(2) .cards .card img{
+        width: 130px;
+    }
+    main section:nth-child(2) .cards .card a{
+        padding: 5px 20px;
+        gap: 5px;
+    }
+    main section:nth-child(2) .menu .slides{
+        grid-template-columns: 1fr;
+        width: 90%;
+    }
 }
 
-@media screen and (min-width: 40em) {
+@media screen and (min-width: 50em) {
     header nav, header .menu{
         display: none;
     }    
