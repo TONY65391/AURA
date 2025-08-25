@@ -8,7 +8,7 @@
     font-family: "Roboto Serif", serif;
 }
 body{
-    overflow: hidden;
+    overflow-x: hidden;
     width: min();
 }
 
@@ -19,62 +19,50 @@ body.dark{
     color: white;
 }
 
-header{
+header {
     display: flex;
+    height: 80px;
     align-items: center;
     justify-content: space-around;
-    height: 80px;
+    position: relative;
     color: white;
-    padding: 20px 0;
-}
-header a{
-    margin: 0 10px;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: white;
+    svg{fill: orange;}
 }
 header div{
     display: flex;
     align-items: center;
-    gap: 20px;
-    svg{fill: orange; width: 50px; height: 40px;}
+    gap: 10px;
 }
-header a:nth-child(1),
-header a:hover{
+header .main-logs{
+    gap: 30px;
+}
+header .main-logs a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+header .main-logs a:hover{
     color: orange;
 }
-header div:last-child a{
-    color: white;
-    padding: 10px 20px;
+header .main-logs a:first-child{
+    color: orange;
+}
+header svg{
+    width: 40px;
+    height: 40px;
+}
+header .order a{
+    text-decoration: none;
+    padding: 8px 28px;
     background: orange;
     border: 2px solid orange;
-    font-weight: 700;
+    color: white;
     border-radius: 20px;
-    text-transform: none;
-    font-variant: small-caps;
-    transform: translate(0);
+    text-align: center;
 }
-header div:last-child a:hover{
+header .order a:hover{
     background: none;
     color: orange;
-}
-header nav{
-    position: relative;
-}
-header nav .menu{
-    border: 2px solid red;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 100vw;
-    display: none;
-}
-header nav .menu a{
-    display: block;
-    margin: 10px 0;
-    background: none;
-    border: none;
-    text-align: center;
 }
 header nav .openBtn{
     display: block;
@@ -84,12 +72,78 @@ header nav .openBtn:hover div{
     background: orange;
 }
 header nav .openBtn div{
+    height: 2px;
+    width: 25px;
     background: white;
     margin: 5px;
-    height: 2px;
-    width: 20px;
-    display: block;
+    border-radius: 5px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
 }
+header .menu{
+    position: absolute;
+    top: 100%;
+    height: 0px;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    /* border: 2px solid orange; */
+}
+header .menu a{
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+    text-align: center;
+    border: 1px solid transparent;
+    text-transform: capitalize;
+}
+header .menu a:first-child,
+header .menu a:hover{
+    border: 1px solid orange;
+    color: orange;
+}
+
+
+/* HEADER ANIMATIONS */
+body.open header .menu{
+    animation: openMenu 0.5s ease forwards;
+}
+@keyframes openMenu{
+    to{height: 200px;}
+}
+body.open section:first-child .content{
+    animation: openFirstSection 0.5s ease forwards;
+}
+@keyframes openFirstSection{
+    to{margin-top: 200px;}
+}
+
+body.close header .menu{
+    animation: closeMenu 0.2s ease forwards;
+}
+@keyframes closeMenu{
+    from{height: 200px;}
+    to{height: 0px;}
+}
+body.close section:first-child .content{
+    animation: closeFirstSection 1s ease forwards;
+}
+@keyframes closeFirstSection{
+    from{margin-top: 200px;}
+    to{margin-top: 0px;}
+}
+body.open header nav .openBtn div:first-child{
+    transform: translateY(5px) rotate(45deg);
+}
+body.open header nav .openBtn div:nth-child(2){
+    opacity: 0;
+}
+body.open header nav .openBtn div:last-child{
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+
 
 /* MAIN FIRST SECTION */
 main section:first-child{
@@ -107,6 +161,8 @@ main section:first-child .container{
     grid-template-columns: repeat(3, 100%);
     align-items: center;
     height: 100vh;
+    width: 100%;
+    overflow: hidden;
 }
 main section:first-child .container.to-second{
     animation: second 1s ease forwards;
@@ -153,11 +209,16 @@ main section:first-child .content a:hover{
     color: orange;
 }
 
+
+
 @media screen and (max-width: 40em) {
-    header .main-logs{
+    header .main-logs, header .order{
         display: none;
     }    
-    h1{font-size: 25px;}
-    h2{font-size: 20px;}
-    p{font-size: 16px;}
+}
+
+@media screen and (min-width: 40em) {
+    header nav, header .menu{
+        display: none;
+    }    
 }
