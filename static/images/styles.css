@@ -13,7 +13,7 @@ body{
     margin: auto;
 }
 :root{
-    --grey-color: rgb(4, 20, 20);
+    --grey-color: rgb(41, 44, 44);
 }
 body.light{
     color: black;
@@ -153,7 +153,7 @@ main section:first-child{
     min-height: 80vh;
     height: 100vh;
     margin-top: -80px;
-    background-position: center;
+    background-position: left;
     background-size: cover;
     background-position: left;
     background-repeat: no-repeat;
@@ -346,7 +346,7 @@ main section:nth-child(2) .menu .slides .slide{
 main section:nth-child(2) .menu .slides .slide h4{
     font-size: 25px;
     font-weight: 500;
-    color: orange;
+    color: white;
 }
 main section:nth-child(2) .menu .slides .slide .slide-text{
     padding: 20px 30px;
@@ -354,6 +354,7 @@ main section:nth-child(2) .menu .slides .slide .slide-text{
 main section:nth-child(2) .menu .slides .slide .slide-text p{
     line-height: 1.5;
     margin-top: 10px;
+    font-size: 15px;
 }
 main section:nth-child(2) .menu .slides .slide .slide-text .price{
     display: flex;
@@ -386,6 +387,210 @@ main section:nth-child(2) .menu .slides .slide .img-cont img{
     margin: auto;
 }
 
+
+/* THIRD SECTION */
+main section:nth-child(3){
+    background: var(--grey-color);
+    padding: 50px 0;
+}
+main section:nth-child(3) .content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    color: white;
+}
+main section:nth-child(3) .content img{
+    width: 80%;
+}
+main section:nth-child(3) .content  h3{
+    font-size: 30px;
+    font-weight: 500;
+    margin: 20px 0;
+    font-variant: small-caps;
+}
+main section:nth-child(3) .content p{
+    line-height: 1.5;
+    font-style: 16px;
+}
+main section:nth-child(3) .content a{
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: white;
+    padding: 8px 28px;
+    border: 2px solid orange;
+    background: orange;
+    width: fit-content;
+    border-radius: 20px;
+}
+main section:nth-child(3) .content a:hover{
+    background: none;
+    color: orange;
+}
+
+/* FOURTH SECTION */
+main section:nth-child(4){
+    width: 85%;
+    margin: auto;
+    padding-top: 50px;
+}
+main section:nth-child(4) .content{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 20px;
+}
+main section:nth-child(4) img{
+    width: 100%;
+    height: 390px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+main section:nth-child(4) h2{
+    font-weight: 500;
+    font-size: 2em;
+}
+
+main section:nth-child(4) form input{
+    display: block;
+    width: 100%;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid black;
+    outline: none;
+    border-radius: 5px;
+}
+main section:nth-child(4) a{
+    color: white;
+    padding: 8px 28px;
+    background: orange;
+    border: 2px solid orange;
+    border-radius: 20px;
+    display: block;
+    margin: 20px 0;
+    width: fit-content;
+}
+main section:nth-child(4) a:hover{
+    background: none;
+    color: orange;
+    text-decoration: none;
+}
+main section:nth-child(4) h2{
+    text-align: center;
+    font-variant: small-caps;
+    margin: 10vh 0 0 0;
+}
+
+main section:nth-child(4) .customers{
+    padding-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+main section:nth-child(4) .buttons{
+    width: fit-content;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 30px auto;
+}
+main section:nth-child(4) .buttons button{
+    border:2px solid orange;
+    background: orange;
+    color: white;
+    font-size: 20px;
+    padding: 5px 15px;
+    border-radius: 50%;
+    font-weight: 700;
+}
+main section:nth-child(4) .buttons button:hover{
+    background: none;
+    color: orange;
+}
+main section:nth-child(4) .customers .customer blockquote{
+    background: var(--grey-color);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    footer{padding: 0; text-align: left;}
+}
+main section:nth-child(4) .customers .customer img{
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 5px solid orange;
+}
+
+/* FOOTER */
+footer{
+    background: var(--grey-color);
+    color: white;
+    padding: 100px 20px 50px 20px;
+    text-align: center;
+}
+footer .sections{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+    margin: auto;
+    text-align: center;
+
+    @media (width >= 0){
+        grid-template-columns: 1fr;
+    }
+    @media (width >= 50em){
+        grid-template-columns: repeat(3, 1fr);
+        width: 90%;
+    }
+    @media (width >= 60em){
+        grid-template-columns: repeat(3, 1fr);
+        width: 80%;
+    }
+}
+footer .sections section h3{
+    margin: 20px 0;
+    font-weight: 500;
+    font-variant: small-caps;
+}
+footer .sections section p{
+    line-height: 2;
+}
+footer .sections section .socials{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin: auto;
+}
+footer .sections section .socials a{
+    padding: 5px;
+    background: white;
+    border-radius: 50%;
+
+    svg{fill: var(--grey-color); width: 20px;}
+}
+footer .sections section .socials a:hover svg{
+    fill: orange;
+}
+footer .sections section a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin: 10px auto;
+    color: white;
+}
+footer .sections svg{
+    width: 30px;
+    fill: white;
+}
+footer .credits{
+    margin-top: 50px;
+}
+
 @media screen and (max-width: 50em) {
     header .main-logs, header .order{
         display: none;
@@ -409,6 +614,23 @@ main section:nth-child(2) .menu .slides .slide .img-cont img{
     main section:nth-child(2) .menu .slides{
         grid-template-columns: 1fr;
         width: 90%;
+    }
+    main section:nth-child(2) .menu .filters{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+    /* THIRD */
+    main section:nth-child(3) .content{
+        grid-template-columns: 1fr;
+    }
+
+    /* FOURTH */
+    main section:nth-child(4) .content{
+        grid-template-columns: 1fr;
+    }
+    main section:nth-child(4) .customers{
+        grid-template-columns: 1fr;
     }
 }
 

@@ -124,6 +124,12 @@ STATIC_DIRS = [os.path.join(BASE_DIR, 'app/static')]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+GOOGLE_API_KEY = "AIzaSyD8zEARUx6NDKJJQKjbUREiEyS6GkKNEo8"
+
+RECAPTCHA_KEY = "6LfRebIrAAAAABY1BKT8XlsSxjt0b3YTO8xKrw9_"
+
+RECAPTCHA_SECRET_KEY = "6LfRebIrAAAAABT5IMzoG-15eS0xTEbPXvovM3cv"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
