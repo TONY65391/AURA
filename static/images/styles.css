@@ -538,9 +538,6 @@ footer .sections{
     margin: auto;
     text-align: center;
 
-    @media (width >= 0){
-        grid-template-columns: 1fr;
-    }
     @media (width >= 50em){
         grid-template-columns: repeat(3, 1fr);
         width: 90%;
@@ -591,7 +588,7 @@ footer .credits{
     margin-top: 50px;
 }
 
-@media screen and (max-width: 50em) {
+@media screen and (max-width: 760px) {
     header .main-logs, header .order{
         display: none;
     }    
@@ -624,6 +621,9 @@ footer .credits{
     main section:nth-child(3) .content{
         grid-template-columns: 1fr;
     }
+    main section:nth-child(3) a{
+        border: 5px solid red;
+    }
 
     /* FOURTH */
     main section:nth-child(4) .content{
@@ -632,9 +632,18 @@ footer .credits{
     main section:nth-child(4) .customers{
         grid-template-columns: 1fr;
     }
+    main section:nth-child(4) a{
+        margin: 30px auto;
+    }
+
+    /* FOOTER */
+
+    footer .sections{
+        grid-template-columns: 1fr;
+    }
 }
 
-@media screen and (min-width: 50em) {
+@media screen and (min-width: 760px) {
     header nav, header .menu{
         display: none;
     }    
