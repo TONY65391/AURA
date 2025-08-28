@@ -12,6 +12,76 @@ body{
     width: min(100%, 1500px);
     margin: auto;
 }
+body[class="menu"] header .main-logs a:nth-child(2){
+    color: orange;    
+}
+body[class="menu"] header .main-logs a:first-child{
+    color: white;    
+}
+body[class="menu"] header .main-logs a:first-child:hover{
+    color: orange;    
+}
+
+body[class="about"] header .main-logs a:nth-child(3){
+    color: orange;    
+}
+body[class="about"] header .main-logs a:first-child{
+    color: white;    
+}
+body[class="about"] header .main-logs a:first-child:hover{
+    color: orange;    
+}
+
+body[class="book_a_table"] header .main-logs a:nth-child(4){
+    color: orange;    
+}
+body[class="book_a_table"] header .main-logs a:first-child{
+    color: white;    
+}
+body[class="book_a_table"] header .main-logs a:first-child:hover{
+    color: orange;    
+}
+
+.loading{
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url('/static/images/pexels-daniel-reche-718241-1556688.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 6;
+    filter: brightness(50%);
+}
+.loading::after{
+    content: "";
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* transform: translate(-80%, -50%); */
+    border: 5px solid white;
+    border-top-color: orange;
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
+}
+@keyframes loading{
+    from{transform: rotate(0deg);}
+    to{
+        transform: rotate(360deg);
+    }
+}
+.loading.fade{
+    animation: fadeLoader 1s ease forwards;
+}
+@keyframes fadeLoader{
+    from{opacity: 1;}
+    to{opacity: 0; pointer-events: none;}
+}
+
 :root{
     --grey-color: rgb(41, 44, 44);
 }
@@ -29,7 +99,17 @@ header {
     justify-content: space-around;
     position: relative;
     color: white;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: url('/static/images/pexels-daniel-reche-718241-1556688.jpg');
+    background-repeat: no-repeat;
     svg{fill: orange;}
+
+}
+header h1{
+    font-variant: small-caps;
+    font-weight: 500;
 }
 header div{
     display: flex;
@@ -67,14 +147,14 @@ header .order a:hover{
     background: none;
     color: orange;
 }
-header nav .openBtn{
+header .openBtn{
     display: block;
     cursor: pointer;
 }
-header nav .openBtn:hover div{
+header .openBtn:hover div{
     background: orange;
 }
-header nav .openBtn div{
+header .openBtn div{
     height: 2px;
     width: 25px;
     background: white;
@@ -88,8 +168,9 @@ header .menu{
     height: 0px;
     width: 100%;
     display: block;
+    background: black;
+    color: white;
     overflow: hidden;
-    /* border: 2px solid orange; */
 }
 header .menu a{
     display: block;
@@ -115,12 +196,6 @@ body.open header .menu{
 @keyframes openMenu{
     to{height: 200px;}
 }
-body.open section:first-child .content{
-    animation: openFirstSection 0.5s ease forwards;
-}
-@keyframes openFirstSection{
-    to{margin-top: 200px;}
-}
 
 body.close header .menu{
     animation: closeMenu 0.2s ease forwards;
@@ -129,94 +204,63 @@ body.close header .menu{
     from{height: 200px;}
     to{height: 0px;}
 }
-body.close section:first-child .content{
-    animation: closeFirstSection 1s ease forwards;
-}
-@keyframes closeFirstSection{
-    from{margin-top: 200px;}
-    to{margin-top: 0px;}
-}
-body.open header nav .openBtn div:first-child{
+body.open header .openBtn div:first-child{
     transform: translateY(5px) rotate(45deg);
 }
-body.open header nav .openBtn div:nth-child(2){
+body.open header .openBtn div:nth-child(2){
     opacity: 0;
 }
-body.open header nav .openBtn div:last-child{
+body.open header .openBtn div:last-child{
     transform: translateY(-9px) rotate(-45deg);
 }
 
 
-
 /* MAIN FIRST SECTION */
-main section:first-child{
-    min-height: 80vh;
-    height: 100vh;
-    margin-top: -80px;
-    background-position: left;
-    background-size: cover;
-    background-position: left;
-    background-repeat: no-repeat;
-    background-image: url('/static/images/pexels-daniel-reche-718241-1556688.jpg');
-}
 main section:first-child .container{
+    min-height: 100vh;
+    max-height: 100vh;
+    height: fit-content;
+    background-image: url('/static/images/pexels-daniel-reche-718241-1556688.jpg');
+    background-size: cover;
+    background-position: 50% 80%;
+    color: white;
     display: grid;
     grid-template-columns: repeat(3, 100%);
-    align-items: center;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
+    position: relative;
 }
-main section:first-child .container.to-second{
-    animation: second 1s ease forwards;
+main section:first-child .container .content{
+    height: fit-content;
+    width: min(90%, 600px);
+    margin-left: 9%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-shadow: 1px 1px 1px black;
 }
-@keyframes second{
-    to{transform: translateX(-100%);}
+main section:first-child .container .content h1{
+    font-variant: small-caps;
+    font-size: 3em;
 }
-main section:first-child .container.to-third{
-    animation: third 1s ease forwards;
-}
-@keyframes third{
-    to{transform: translateX(-200%);}
-}
-main section:first-child .content{
-    color: white;
-    width: min(80%, 750px);
+main section:first-child .container .content p{
     line-height: 1.5;
-    padding-left: 8%;
-    /* border: 2px solid red; */
+    margin-top: 10px;
 }
-main section:first-child .content h1{
-    color: white;
-    line-height: 1.2;
-    font-weight: 500;
-    font-variant: small-caps;
-    font-size: 40px;
-    text-shadow: 1px 1px 2px black;
-}
-main section:first-child .content h1 span{
-    color: orange; 
-    font-style: italic;
-}
-main section:first-child .content p{
-    margin: 20px 0;
-}
-main section:first-child .content a{
-    color: white;
-    padding: 8px 40px;
-    background: orange;
-    border: 2px solid orange;
-    border-radius: 20px;
-    text-decoration: none;
-    width: fit-content;
+main section:first-child .container .content a{
     display: block;
-    margin-top: 20px;
-    font-variant: small-caps;
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+    padding: 8px 28px;
+    border: 2px solid orange;
+    background: orange;
+    border-radius: 20px;
+    width: fit-content;
 }
-main section:first-child .content a:hover{
-    background: none;
+main section:first-child .container .content a:hover{
+    background: transparent;
     color: orange;
 }
+
 
 
 /* MAIN SECOND SECTION */
@@ -478,7 +522,7 @@ main section:nth-child(4) a:hover{
     text-decoration: none;
 }
 main section:nth-child(4) h2{
-    text-align: center;
+    /* text-align: center; */
     font-variant: small-caps;
     margin: 10vh 0 0 0;
 }
@@ -593,6 +637,14 @@ footer .credits{
         display: none;
     }    
 
+    main section:first-child .container .content{
+        margin-left: 5%;
+        text-shadow: none;
+    }
+    main section:first-child .container .content h1{
+        font-size: 30px;
+    }
+
     /* SECOND SECTION */
     main section:nth-child(2) .cards{
         grid-template-columns: 1fr;
@@ -622,7 +674,7 @@ footer .credits{
         grid-template-columns: 1fr;
     }
     main section:nth-child(3) a{
-        border: 5px solid red;
+        color: orange;
     }
 
     /* FOURTH */
@@ -635,16 +687,24 @@ footer .credits{
     main section:nth-child(4) a{
         margin: 30px auto;
     }
+    main section:nth-child(4) h2{
+        text-align: center;
+    }
 
     /* FOOTER */
 
     footer .sections{
         grid-template-columns: 1fr;
     }
+    .loading::after{
+        width: 30px;
+        height: 30px;
+        border-width: 3px;
+    }
 }
 
 @media screen and (min-width: 760px) {
-    header nav, header .menu{
+    header .openBtn, header .menu{
         display: none;
     }    
 }

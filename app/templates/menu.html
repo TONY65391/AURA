@@ -4,28 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
     <link rel="stylesheet" href="{% static '/images/index.css' %}">
-    <title>Feane's Restaurant - Home</title>
+    <title>Feane's Restaurant - Menu</title>
 </head>
-<body>
+<body class="menu">
     <header>
-
         <div>
             <h1>Feane</h1>
         </div>
 
         <div class="main-logs">
-            <a>Home</a>
-            <a href="menu">Menu</a>
-            <a href="about">About</a>
-            <a href="book_a_table">Book A Table</a>
+            <a href="home">Home</a>
+            <a>menu</a>
+            <a href="about">about</a>
+            <a href="book_a_table">Book a table</a>
         </div>
 
         <div class="order">
-            <a href="#">Order Now</a>
+            <a href="#">Order Online</a>
         </div>
 
         <div class="openBtn">
@@ -35,68 +31,19 @@
         </div>
 
         <div class="menu">
-            <a>Home</a>
-            <a href="menu">Menu</a>
+            <a href="home">Home</a>
+            <a>Menu</a>
             <a href="about">About</a>
-            <a href="book_a_table">Book A Table</a>
+            <a href="book_a_table">Book a table</a>
         </div>
     </header>
 
     <div class="loading"></div>
     
     <main>
-        <section>
-            <div class="container">
-                <div class="content">
-                    <h1><span>Feane's</span> Fast Food Restaurant</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, possimus. Vitae unde, doloribus doloremque deleniti totam repudiandae expedita aspernatur quam porro vero quaerat possimus. Ducimus magnam quod maiores ratione ex!</p>
-                    <a href="#">Order Now</a>
-                </div>
-
-                <div class="content">
-                    <h1><span>Feane's</span> Fast Food Restaurant</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, possimus. Vitae unde, doloribus doloremque deleniti totam repudiandae expedita aspernatur quam porro vero quaerat possimus. Ducimus magnam quod maiores ratione ex!</p>
-                    <a href="#">Order Now</a>
-                </div>
-
-                <div class="content">
-                    <h1><span>Feane's</span> Fast Food Restaurant</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor, possimus. Vitae unde, doloribus doloremque deleniti totam repudiandae expedita aspernatur quam porro vero quaerat possimus. Ducimus magnam quod maiores ratione ex!</p>
-                    <a href="#">Order Now</a>
-                </div>
-            </div>
-        </section>
+        <section></section>
 
         <section>
-            <div class="cards">
-                <div class="card">
-                    <div class="img-cont">
-                        <img src="/static/images/o1.jpg" alt="">
-                    </div>
-                    <div class="card-text">
-                        <h4>Tasty Thursdays</h4>
-                        <p>20% <span>off</span></p>
-                        <a href="#">
-                            Order Now 
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM208-800h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Z"/></svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="img-cont">
-                        <img src="/static/images/o2.jpg" alt="">
-                    </div>
-                    <div class="slide-text">
-                        <h4>Pizza Days</h4>
-                        <p>15% <span>off</span></p>
-                        <a href="#">
-                            Order Now 
-                            <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM208-800h590q23 0 35 20.5t1 41.5L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68-39.5t-2-78.5l54-98-144-304H40v-80h130l38 80Z"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
 
             <div class="menu">
                 <h3>Our Menu</h3>
@@ -266,66 +213,6 @@
                 <a href="#" id="view">View More</a>
             </div>
         </section>
-
-        <section>
-            <div class="content">
-                <div>
-                    <img src="/static/images/about-img.png" alt="">
-                </div>
-
-                <div class="text">
-                    <h3>We Are Feane</h3>
-                    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.</p>
-                    <a href="#">Read More</a>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>Book A Table</h2>
-            <div class="content">
-                <form action="">
-                    <input type="text" placeholder="Your Name" id="name">
-                    <input type="tel" placeholder="Phone Number" id="phone">
-                    <input type="email" placeholder="Your Email" id="email">
-                    <input type="number" placeholder="How Many Persons" min="0" max="5" id="numbers">
-                    <input type="date" id="date">
-                </form>
-
-                <div>
-                    <img src="/static/images/pexels-daniel-kendy-takeda-bueno-2149635162-30715170.jpg" alt="">
-                </div>
-            </div>
-
-            <a href="#">BOOK NOW</a>
-
-            <h2>What Says Our Customers</h2>
-            <div class="customers">
-
-                <div class="customer">
-                    <blockquote>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error explicabo quisquam alias minima quia molestias in a sit nisi eveniet aliquam quo doloribus, totam rem culpa, deleniti maxime accusamus animi.</p>
-                        <footer>Moana Michell</footer>
-                    </blockquote>
-
-                    <img src="/static/images/client1.jpg" alt="">
-                </div>
-
-                <div class="customer">
-                    <blockquote>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error explicabo quisquam alias minima quia molestias in a sit nisi eveniet aliquam quo doloribus, totam rem culpa, deleniti maxime accusamus animi.</p>
-                        <footer>Mike Hamell</footer>
-                    </blockquote>
-
-                    <img src="/static/images/client2.jpg" alt="">
-                </div>
-            </div>
-
-            <div class="buttons">
-                    <button id="prev">«</button>
-                    <button id="next">»</button>
-                </div>
-        </section>
     </main>
 
     <footer>
@@ -391,7 +278,6 @@
             <p>Distributed by Umofia Anthony Inemesit</p>
         </div>
     </footer>
-
 <script src="/static/images/app.js" defer></script>
 </body>
 </html>

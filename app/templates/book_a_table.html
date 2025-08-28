@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static '/images/index.css' %}">
+    <title>Feane Restaurant - Book A Table</title>
+</head>
+<body class="book_a_table">
+    <header>
+        <div>
+            <h1>Feane</h1>
+        </div>
+
+        <div class="main-logs">
+            <a href="home">Home</a>
+            <a href="menu">menu</a>
+            <a href="about">about</a>
+            <a>Book a table</a>
+        </div>
+
+        <div class="order">
+            <a href="#">Order Online</a>
+        </div>
+
+        <div class="openBtn">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+
+        <div class="menu">
+            <a href="home">Home</a>
+            <a>Menu</a>
+            <a href="#">About</a>
+            <a href="#">Book a table</a>
+        </div>
+    </header>
+
+    <div class="loading"></div>
+
+    <main>
+        <section></section>
+        <section></section>
+        <section></section>
+
+                <section>
+            <h2>Book A Table</h2>
+            <div class="content">
+                <form action="">
+                    <input type="text" placeholder="Your Name" id="name">
+                    <input type="tel" placeholder="Phone Number" id="phone">
+                    <input type="email" placeholder="Your Email" id="email">
+                    <input type="number" placeholder="How Many Persons" min="0" max="5" id="numbers">
+                    <input type="date" id="date">
+                </form>
+
+                <div>
+                    <img src="/static/images/pexels-daniel-kendy-takeda-bueno-2149635162-30715170.jpg" alt="">
+                </div>
+            </div>
+
+            <a href="#">BOOK NOW</a>
+
+            <h2>What Says Our Customers</h2>
+            <div class="customers">
+
+                <div class="customer">
+                    <blockquote>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error explicabo quisquam alias minima quia molestias in a sit nisi eveniet aliquam quo doloribus, totam rem culpa, deleniti maxime accusamus animi.</p>
+                        <footer>Moana Michell</footer>
+                    </blockquote>
+
+                    <img src="/static/images/client1.jpg" alt="">
+                </div>
+
+                <div class="customer">
+                    <blockquote>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error explicabo quisquam alias minima quia molestias in a sit nisi eveniet aliquam quo doloribus, totam rem culpa, deleniti maxime accusamus animi.</p>
+                        <footer>Mike Hamell</footer>
+                    </blockquote>
+
+                    <img src="/static/images/client2.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="buttons">
+                    <button id="prev">«</button>
+                    <button id="next">»</button>
+                </div>
+        </section>
+    </main>
+
+
+    <footer>
+
+        <div class="sections">
+            <section>
+                <h3>Contact Us</h3>
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 400Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Z"/></svg>
+
+                    Location
+                </a>
+
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M798-120q-125 0-247-54.5T329-329Q229-429 174.5-551T120-798q0-18 12-30t30-12h162q14 0 25 9.5t13 22.5l26 140q2 16-1 27t-11 19l-97 98q20 37 47.5 71.5T387-386q31 31 65 57.5t72 48.5l94-94q9-9 23.5-13.5T670-390l138 28q14 4 23 14.5t9 23.5v162q0 18-12 30t-30 12Z"/></svg>
+
+                    Call +234-90387-76547
+                </a>
+
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280 320-200v-80L480-520 160-720v80l320 200Z"/></svg>
+
+                    feane@gmail.com
+                </a>
+            </section>
+
+            <section>
+                <h3>Feane</h3>
+                <p>Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with </p>
+
+                <div class="socials">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M480 257.35c0-123.7-100.3-224-224-224s-224 100.3-224 224c0 111.8 81.9 204.47 189 221.29V322.12h-56.89v-64.77H221V208c0-56.13 33.45-87.16 84.61-87.16 24.51 0 50.15 4.38 50.15 4.38v55.13H327.5c-27.81 0-36.51 17.26-36.51 35v42h62.12l-9.92 64.77H291v156.54c107.1-16.81 189-109.48 189-221.31z" fill-rule="evenodd"/></svg>
+                    </a>
+
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M496 109.5a201.8 201.8 0 01-56.55 15.3 97.51 97.51 0 0043.33-53.6 197.74 197.74 0 01-62.56 23.5A99.14 99.14 0 00348.31 64c-54.42 0-98.46 43.4-98.46 96.9a93.21 93.21 0 002.54 22.1 280.7 280.7 0 01-203-101.3A95.69 95.69 0 0036 130.4c0 33.6 17.53 63.3 44 80.7A97.5 97.5 0 0135.22 199v1.2c0 47 34 86.1 79 95a100.76 100.76 0 01-25.94 3.4 94.38 94.38 0 01-18.51-1.8c12.51 38.5 48.92 66.5 92.05 67.3A199.59 199.59 0 0139.5 405.6a203 203 0 01-23.5-1.4A278.68 278.68 0 00166.74 448c181.36 0 280.44-147.7 280.44-275.8 0-4.2-.11-8.4-.31-12.5A198.48 198.48 0 00496 109.5z"/></svg>
+                    </a>
+                    
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M444.17 32H70.28C49.85 32 32 46.7 32 66.89v374.72C32 461.91 49.85 480 70.28 480h373.78c20.54 0 35.94-18.21 35.94-38.39V66.89C480.12 46.7 464.6 32 444.17 32zm-273.3 373.43h-64.18V205.88h64.18zM141 175.54h-.46c-20.54 0-33.84-15.29-33.84-34.43 0-19.49 13.65-34.42 34.65-34.42s33.85 14.82 34.31 34.42c-.01 19.14-13.31 34.43-34.66 34.43zm264.43 229.89h-64.18V296.32c0-26.14-9.34-44-32.56-44-17.74 0-28.24 12-32.91 23.69-1.75 4.2-2.22 9.92-2.22 15.76v113.66h-64.18V205.88h64.18v27.77c9.34-13.3 23.93-32.44 57.88-32.44 42.13 0 74 27.77 74 87.64z"/></svg>
+                    </a>
+                    
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M349.33 69.33a93.62 93.62 0 0193.34 93.34v186.66a93.62 93.62 0 01-93.34 93.34H162.67a93.62 93.62 0 01-93.34-93.34V162.67a93.62 93.62 0 0193.34-93.34h186.66m0-37.33H162.67C90.8 32 32 90.8 32 162.67v186.66C32 421.2 90.8 480 162.67 480h186.66C421.2 480 480 421.2 480 349.33V162.67C480 90.8 421.2 32 349.33 32z"/><path d="M377.33 162.67a28 28 0 1128-28 27.94 27.94 0 01-28 28zM256 181.33A74.67 74.67 0 11181.33 256 74.75 74.75 0 01256 181.33m0-37.33a112 112 0 10112 112 112 112 0 00-112-112z"/></svg>
+                    </a>
+                    
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M412.19 118.66a109.27 109.27 0 01-9.45-5.5 132.87 132.87 0 01-24.27-20.62c-18.1-20.71-24.86-41.72-27.35-56.43h.1C349.14 23.9 350 16 350.13 16h-82.44v318.78c0 4.28 0 8.51-.18 12.69 0 .52-.05 1-.08 1.56 0 .23 0 .47-.05.71v.18a70 70 0 01-35.22 55.56 68.8 68.8 0 01-34.11 9c-38.41 0-69.54-31.32-69.54-70s31.13-70 69.54-70a68.9 68.9 0 0121.41 3.39l.1-83.94a153.14 153.14 0 00-118 34.52 161.79 161.79 0 00-35.3 43.53c-3.48 6-16.61 30.11-18.2 69.24-1 22.21 5.67 45.22 8.85 54.73v.2c2 5.6 9.75 24.71 22.38 40.82A167.53 167.53 0 00115 470.66v-.2l.2.2c39.91 27.12 84.16 25.34 84.16 25.34 7.66-.31 33.32 0 62.46-13.81 32.32-15.31 50.72-38.12 50.72-38.12a158.46 158.46 0 0027.64-45.93c7.46-19.61 9.95-43.13 9.95-52.53V176.49c1 .6 14.32 9.41 14.32 9.41s19.19 12.3 49.13 20.31c21.48 5.7 50.42 6.9 50.42 6.9v-81.84c-10.14 1.1-30.73-2.1-51.81-12.61z"/></svg>
+                    </a>
+                </div>
+            </section>
+
+            <section>
+                <h3>Opening Hours</h3>
+                <p>Everyday</p>
+                <p>10.00 AM - 10.00PM</p>
+            </section>
+        </div>
+
+        <div class="credits">
+            <p>&copy; 2025 All Rights Reserved By <span>FEANE's Restaurant & Bar</span></p>
+            <p>Distributed by Umofia Anthony Inemesit</p>
+        </div>
+    </footer>
+
+<script src="/static/images/app.js" defer></script>
+</body>
+</html>

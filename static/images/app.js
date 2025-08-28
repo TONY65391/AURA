@@ -1,6 +1,8 @@
 const header = document.querySelector('header');
-const openBtn = header.querySelector('nav .openBtn');
+const openBtn = header.querySelector('.openBtn');
 const body = document.querySelector('body');
+const loading = document.querySelector('.loading');
+
 
 openBtn.addEventListener('click', () => {
     if (body.classList.contains('open')){
@@ -11,3 +13,7 @@ openBtn.addEventListener('click', () => {
         body.classList.add('open')
     }
 })
+
+setInterval(() => {
+    loading.classList.add('fade');
+}, 2000);
